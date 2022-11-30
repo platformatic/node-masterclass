@@ -1,13 +1,19 @@
 import esMain from 'es-main'
 import fastify from 'fastify'
-import routes from './routes.js'
-import shared from './shared.js'
 import closeWithGrace from 'close-with-grace'
+import autoload from '@fastify/autoload'
+import { join } from 'desm'
 
-export async function main (opts) {
+export async function main (options) {
   const app = fastify()
-  app.register(shared, opts)
-  app.register(routes, opts)
+  app.register(autoload, {
+    dir: join(import.meta.url, './plugins'),
+    options
+  })
+  app.register(autoload, {
+    dir: join(import.meta.url, './routes'),
+    options
+  })
   return app
 }
 
