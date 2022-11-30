@@ -1,0 +1,19 @@
+{
+  "name": "fastify-plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "dependencies": {
+    "close-with-grace": "^1.1.0",
+    "es-main": "^1.2.0",
+    "fastify": "^4.10.2",
+    "fastify-plugin": "^4.3.0"
+  }
+}
