@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "hammer": "autocannon -c 100 -a 10000 -t 1 --renderStatusCodes http://127.0.0.1:3000"
+  },
+  "dependencies": {
+    "@fastify/under-pressure": "^8.3.0",
+    "fastify": "^4.19.2"
+  },
+  "devDependencies": {
+    "autocannon": "^7.11.0"
+  }
+}
