@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "hammer": "autocannon -c 100 -a 10000 -t 1 --renderStatusCodes http://127.0.0.1:3000"
+    "hammer": "autocannon -c 100 -a 10000 -t 1 --renderStatusCodes http://127.0.0.1:3000",
+    "hammer2": "autocannon -c 1000 -d 20  -t 1 --renderStatusCodes http://127.0.0.1:3000"
   },
   "dependencies": {
     "@fastify/under-pressure": "^8.3.0",
