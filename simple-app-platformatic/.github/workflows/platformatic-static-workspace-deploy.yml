@@ -1,0 +1,33 @@
+name: Deploy Platformatic application to the cloud
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+
+jobs:
+  build_and_deploy:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout application project repository
+        uses: actions/checkout@v3
+      - name: npm install --omit=dev
+        run: npm install --omit=dev
+      - name: Build project        
+        run: npm run build
+      - name: Deploy project
+        uses: platformatic/onestep@latest
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          platformatic_workspace_id: ggg
+          platformatic_workspace_key: ${{ secrets.PLATFORMATIC_STATIC_WORKSPACE_API_KEY }}
+          platformatic_config_path: ./platformatic.service.json
+        env:
+          PLT_SERVER_LOGGER_LEVEL: info 
+          PORT: 3042 
+          PLT_SERVER_HOSTNAME: 127.0.0.1 
+

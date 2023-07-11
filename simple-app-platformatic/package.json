@@ -1,0 +1,22 @@
+{
+  "name": "fastify-plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/autoload": "^5.6.0",
+    "close-with-grace": "^1.1.0",
+    "desm": "^1.3.0",
+    "es-main": "^1.2.0",
+    "fastify": "^4.10.2",
+    "fastify-plugin": "^4.3.0",
+    "vitest": "^0.25.3"
+  }
+}

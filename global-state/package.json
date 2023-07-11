@@ -1,0 +1,17 @@
+{
+  "name": "global-state",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@databases/sqlite": "^4.0.2",
+    "sqlite3": "^5.1.2"
+  }
+}
