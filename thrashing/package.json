@@ -2,10 +2,12 @@
   "type": "module",
   "scripts": {
     "hammer": "autocannon -c 100 -a 10000 -t 1 --renderStatusCodes http://127.0.0.1:3000",
-    "hammer2": "autocannon -c 1000 -d 20  -t 1 --renderStatusCodes http://127.0.0.1:3000"
+    "hammer2": "autocannon -c 100 -d 20  -t 1 --renderStatusCodes http://127.0.0.1:3000",
+    "demo": "autocannon -c 50 -d 10 -t 1 --renderStatusCodes http://127.0.0.1:3000"
   },
   "dependencies": {
     "@fastify/under-pressure": "^8.3.0",
+    "atomic-sleep": "^1.0.0",
     "fastify": "^4.19.2"
   },
   "devDependencies": {

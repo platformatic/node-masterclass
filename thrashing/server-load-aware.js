@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import underPressure from '@fastify/under-pressure'
 import { setTimeout as sleep } from 'timers/promises'
+import atomicSleep from 'atomic-sleep'
 
 const server = fastify()
 
@@ -14,12 +15,11 @@ server.register(underPressure, {
 
 server.get('/', async (request, reply) => {
   // Simulate a database query
-  await sleep(Math.floor(Math.random() * 100))
+  await sleep(10)
 
   if (!server.isUnderPressure()) {
-    for (let i = 0; i < 100000000; i++) {
-      // Simulate CPU intensive task
-    }
+    // Simulate CPU intensive task
+    atomicSleep(20)
   } else {
     // Use cached value
   }
